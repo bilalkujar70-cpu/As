@@ -16,15 +16,20 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 load_dotenv()
 
-BOT_TOKEN        = os.getenv("9101346032:AAE8zzolYHa46g9RI4gLkKTc68soWpRgJQM")
-MONGODB_URI      = os.getenv("https://mangob.st/attack", "HEX.09.01")
-DATABASE_NAME    = os.getenv("DIEHEX", "attack_bot")
-API_URL          = os.getenv("https://kimstress.st")
-API_KEY          = os.getenv("7d6134479bd735f9c85b0ac129ef5df47 2b11614e6f6eec07a00fcc0240c7ca")
-ADMIN_IDS        = [int(x.strip()) for x in os.getenv("ADMIN_IDS", "").split(",") if x.strip()]
-CHANNEL_ID       = os.getenv("TNTHACKER", "")
-CHANNEL_USERNAME = os.getenv("@PRAGNESHRAMPURE", "")
-CHANNEL_INVITE   = os.getenv("CHANNEL_INVITE_LINK", "")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+MONGODB_URI = os.getenv("MONGODB_URI")
+DATABASE_NAME = os.getenv("DATABASE_NAME", "attack_bot")
+
+CHANNEL_ID = os.getenv("CHANNEL_ID", "")
+CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "")
+CHANNEL_INVITE = os.getenv("CHANNEL_INVITE_LINK", "")
+
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN is missing")
+
+if not MONGODB_URI:
+    raise ValueError("MONGODB_URI is missing")
 
 BLOCKED_PORTS = {8700, 20000, 443, 17500, 9031, 20002, 20001}
 IST = timezone(timedelta(hours=5, minutes=30))
