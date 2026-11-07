@@ -16,7 +16,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 load_dotenv()
 
-BOT_TOKEN        = os.getenv("8659493727:AAGqdkgG2kz6bwLSTzrPfiwoTkAZ1m67lyU")
+BOT_TOKEN        = os.getenv("9101346032:AAE8zzolYHa46g9RI4gLkKTc68soWpRgJQM")
 MONGODB_URI      = os.getenv("https://mangob.st/attack", "HEX.09.01")
 DATABASE_NAME    = os.getenv("DIEHEX", "attack_bot")
 API_URL          = os.getenv("https://kimstress.st")
